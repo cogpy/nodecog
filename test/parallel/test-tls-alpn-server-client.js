@@ -39,7 +39,7 @@ function runTest(clientsOptions, serverOptions, cb) {
     const opt = options.shift();
     opt.port = server.address().port;
     opt.host = serverIP;
-    opt.rejectUnauthorized = false;
+    opt.ca = loadPEM('agent2-cert');
 
     results[clientIndex] = {};
 
