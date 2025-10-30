@@ -127,7 +127,7 @@ Comprehensive test suite (8 test files, ~1200 lines total):
    - Attention-based importance
    - Integration with AtomSpace metagraph
 
-3. **Module Loader Integration Demo (examples/opencog-module-loader-demo.js)** - 196 lines **NEW**
+3. **Module Loader Integration Demo (examples/opencog-module-loader-demo.js)** - 201 lines **NEW**
    - Automatic module tracking demonstration
    - Real-time dependency graph building
    - Module statistics and analysis
@@ -135,7 +135,7 @@ Comprehensive test suite (8 test files, ~1200 lines total):
    - Graph export
    - Runtime API usage examples
 
-4. **Simple Application Example (examples/simple-app-with-opencog.js)** - 105 lines **NEW**
+4. **Simple Application Example (examples/simple-app-with-opencog.js)** - 123 lines **NEW**
    - Practical example of OpenCog in a real application
    - Shows automatic tracking without manual setup
    - Module importance ranking
@@ -384,17 +384,17 @@ doc/opencog/
 - Module Loader Hooks: ~100 lines (CJS + ESM integration)
 - Module Analyzer Agent: ~296 lines
 - Integration Tests: ~150 lines
-- Module Loader Demo: ~196 lines
-- Simple App Example: ~105 lines
+- Module Loader Demo: ~201 lines
+- Simple App Example: ~123 lines
 - Integration Documentation: ~300 lines
-- **Phase 2 Additions: ~1,147 lines**
+- **Phase 2 Additions: ~1,170 lines**
 
 ### Combined Total
 - Core Implementation: ~1,493 lines
 - Tests: ~1,200 lines
 - Examples: ~1,000 lines
 - Documentation: ~1,200 lines
-- **Total: ~4,893 lines**
+- **Total: ~4,893 lines** (~1,170 lines added in Phase 2)
 
 ## Future Enhancements
 
