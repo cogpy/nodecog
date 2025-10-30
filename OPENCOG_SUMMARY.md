@@ -45,20 +45,34 @@ A complete OpenCog-inspired autonomous multi-agent orchestration system in pure 
    - Pause/resume capabilities
    - Event-driven monitoring
 
-6. **Main Module (lib/opencog.js)** - 67 lines
+6. **NodeSpace (lib/internal/opencog/nodespace.js)** - 464 lines **NEW**
+   - AtomSpace-based module dependency tracking
+   - Typed hypergraph representation of Node.js modules
+   - Module types: BUILTIN_MODULE, NPM_MODULE, LOCAL_MODULE, JSON_MODULE
+   - Dependency tracking with DEPENDS_ON links
+   - Export tracking with EXPORTS links
+   - Circular dependency detection
+   - Dependency chain analysis
+   - Attention-based module importance
+   - Graph export for visualization
+   - Event-driven module tracking
+
+7. **Main Module (lib/opencog.js)** - 77 lines
    - Factory function for creating cognitive systems
    - Unified API for all components
    - Easy system initialization
+   - NodeSpace integration
 
 ### Testing
 
-Comprehensive test suite (6 test files, ~500 lines total):
+Comprehensive test suite (7 test files, ~600 lines total):
 - test/parallel/test-opencog-atomspace.js - AtomSpace tests
 - test/parallel/test-opencog-agent.js - Agent framework tests
 - test/parallel/test-opencog-attention.js - Attention system tests
 - test/parallel/test-opencog-orchestrator.js - Orchestrator tests
 - test/parallel/test-opencog-cognitive-loop.js - Cognitive loop tests
 - test/parallel/test-opencog-integration.js - Full system integration tests
+- test/parallel/test-opencog-nodespace.js - NodeSpace module system tests **NEW**
 
 ### Documentation & Examples
 
@@ -69,12 +83,29 @@ Comprehensive test suite (6 test files, ~500 lines total):
    - Autonomous operation
    - Results visualization
 
-2. **Documentation (doc/opencog/README.md)** - Complete guide with:
+2. **NodeSpace Demonstration (examples/nodespace-demo.js)** - 370 lines **NEW**
+   - Module registration and tracking
+   - Dependency analysis
+   - Circular dependency detection
+   - Graph export
+   - Attention-based importance
+   - Integration with AtomSpace metagraph
+
+3. **Documentation (doc/opencog/README.md)** - Complete guide with:
    - Feature overview
    - Quick start guide
    - API reference
    - Usage examples
    - Architecture diagrams
+   - NodeSpace integration
+
+4. **NodeSpace Documentation (doc/opencog/NODESPACE.md)** - Complete guide **NEW**
+   - Metagraph concepts
+   - Module type system
+   - Dependency tracking
+   - API reference
+   - Integration examples
+   - Use cases
 
 ## Key Features
 
@@ -84,6 +115,16 @@ Comprehensive test suite (6 test files, ~500 lines total):
 - Probabilistic truth values
 - Pattern matching and querying
 - Automatic memory management
+
+### Module System (NodeSpace) **NEW**
+- Typed hypergraph representation of Node.js modules
+- Module types: BUILTIN_MODULE, NPM_MODULE, LOCAL_MODULE, JSON_MODULE
+- Dependency tracking with typed links (DEPENDS_ON, EXPORTS, IMPORTS)
+- Circular dependency detection
+- Dependency chain analysis
+- Attention-based module importance
+- Graph export for visualization
+- Integration with OpenCog cognitive architecture
 
 ### Attention Mechanism
 - Economic attention allocation (ECAN)
@@ -168,6 +209,7 @@ lib/
     attention.js                      - Attention allocation (ECAN)
     orchestrator.js                   - Multi-agent coordination
     cognitive_loop.js                 - Autonomous operation
+    nodespace.js                      - Module dependency tracking (NEW)
 
 test/parallel/
   test-opencog-atomspace.js           - AtomSpace tests
@@ -176,21 +218,24 @@ test/parallel/
   test-opencog-orchestrator.js        - Orchestrator tests
   test-opencog-cognitive-loop.js      - Cognitive loop tests
   test-opencog-integration.js         - Integration tests
+  test-opencog-nodespace.js           - NodeSpace tests (NEW)
 
 examples/
   opencog-demo.js                     - Working demonstration
+  nodespace-demo.js                   - NodeSpace demonstration (NEW)
 
 doc/opencog/
   README.md                           - Complete documentation
+  NODESPACE.md                        - NodeSpace documentation (NEW)
 ```
 
 ## Lines of Code
 
-- Core Implementation: ~1,029 lines
-- Tests: ~500 lines
-- Examples: ~240 lines
-- Documentation: ~290 lines
-- **Total: ~2,059 lines**
+- Core Implementation: ~1,493 lines (was ~1,029)
+- Tests: ~600 lines (was ~500)
+- Examples: ~610 lines (was ~240)
+- Documentation: ~600 lines (was ~290)
+- **Total: ~3,303 lines** (was ~2,059)
 
 ## Future Enhancements
 

@@ -11,6 +11,35 @@ This system provides a complete cognitive architecture with the following compon
 - **Agent Framework**: Base class for cognitive agents with autonomous operation
 - **AgentOrchestrator**: Multi-agent scheduling and coordination
 - **CognitiveLoop**: Autonomous cognitive cycle manager
+- **NodeSpace**: AtomSpace-based module system for Node.js (NEW)
+
+## Components
+
+### AtomSpace
+Hypergraph knowledge representation using typed atoms and links.
+
+### AttentionBank
+Economic attention allocation inspired by OpenCog's ECAN.
+
+### Agent System
+Base class for cognitive agents with autonomous scheduling.
+
+### AgentOrchestrator
+Multi-agent coordination and execution.
+
+### CognitiveLoop
+Autonomous cognitive cycle management.
+
+### NodeSpace
+**NEW**: OpenCog AtomSpace-based module dependency tracking system that represents Node.js modules as a typed hypergraph (metagraph). See [NodeSpace Documentation](./NODESPACE.md) for details.
+
+Key features:
+- Modules as typed atoms (BUILTIN_MODULE, NPM_MODULE, LOCAL_MODULE)
+- Dependencies as typed links (DEPENDS_ON, EXPORTS, IMPORTS)
+- Attention-based importance tracking
+- Circular dependency detection
+- Dependency chain analysis
+- Graph export for visualization
 
 ## Features
 
