@@ -86,6 +86,14 @@ This document maps each technology, standard, and concept from the Node.js ecosy
 - **Priority**: Medium
 - **Dependencies**: ABI tracking
 
+#### **JS/C++ boundary** - [Planned - Phase 6]
+- **Integration**: Performance monitoring at JS/C++ boundary
+- **Implementation**: BOUNDARY_CALL atoms with timing data
+- **Cognitive Analysis**: Identify expensive native calls
+- **Optimization**: Minimize boundary crossings
+- **Priority**: Medium
+- **Use Case**: Performance profiling of native addons
+
 ---
 
 ## Phase 2: Development Tools & Standards (Implemented)
@@ -496,6 +504,13 @@ class SecurityAnalyzerAgent extends Agent {
 - **Implementation**: STANDARD atoms with compliance status
 - **Priority**: Low
 
+#### **IETF** (Internet Engineering Task Force) - [Monitoring]
+- **Integration**: IETF standards tracking
+- **Implementation**: STANDARD atoms for RFC compliance
+- **Analysis**: Protocol compliance verification
+- **Priority**: Low
+- **Use Case**: HTTP, TLS, WebSocket standards tracking
+
 ### 8.2 Web APIs
 
 #### **WebAssembly** / **WASM** - [Planned]
@@ -616,6 +631,13 @@ class SecurityAnalyzerAgent extends Agent {
 - **Cognitive Features**: I/O pattern optimization
 - **Priority**: Medium
 
+#### **EOF** (End-of-File) - [Native Support]
+- **Integration**: Stream termination handling
+- **Implementation**: Built-in Node.js streams support
+- **Cognitive Aspect**: EOF pattern detection in data processing
+- **Priority**: Low
+- **Use Case**: Stream processing optimization
+
 ---
 
 ## Cross-Cutting Concerns
@@ -626,7 +648,8 @@ These terms represent communication patterns rather than technical components:
 
 - **AFAICT** / **AFAIK** / **ASAP** - Documentation standards
 - **IIRC** / **IIUC** / **IMHO** / **IMO** - Communication guidelines
-- **LGTM** / **SGTM** / **RSLGTM** - Review protocols
+- **LGTM/SGTM** (Looks/Sounds Good To Me) - Review protocols
+- **RSLGTM** - Rubber-stamp review approval
 - **PTAL** / **TBH** / **WDYT** / **WIP** - Collaboration markers
 
 **Integration**: 
