@@ -475,6 +475,17 @@ Cognitive Loop → Agent Orchestrator → [Agents] → AtomSpace + AttentionBank
         └─────────────────────────────┘
 ```
 
+## Development Roadmap
+
+See [DEVELOPMENT_ROADMAP.md](../../DEVELOPMENT_ROADMAP.md) for a comprehensive integration plan mapping all Node.js technologies, standards, and concepts to the OpenCog orchestration framework with specific linkages to Distributed NodeSpace and the Cognitive Synergy Engine.
+
+The roadmap includes:
+- Phased implementation strategy (Phases 5-12)
+- Integration points for npm, CVE tracking, HTTP, CI/CD, and more
+- Cognitive agent specifications for each component
+- Success metrics and risk management
+- Timeline and dependency information
+
 ## License
 
 MIT License (same as Node.js)
