@@ -14,12 +14,20 @@ This system provides a complete cognitive architecture with the following compon
 - **CognitiveLoop**: Autonomous cognitive cycle manager
 - **NodeSpace**: AtomSpace-based module system for Node.js
 
-### Phase 3 Advanced Features (NEW)
+### Phase 3 Advanced Features
 - **PLN (Probabilistic Logic Networks)**: Advanced probabilistic reasoning
 - **Temporal Reasoning**: Time-based knowledge and inference
 - **Performance Profiling**: Automatic performance analysis
 - **Security Analysis**: Vulnerability detection and risk assessment
 - **Build Optimization**: Code structure analysis and recommendations
+
+### Phase 4 Distributed Cognitive Architecture (NEW) ✨
+- **Distributed AtomSpace**: Multi-node knowledge sharing with sync strategies
+- **ESM Agent Arena**: MLOps Training Academy for autonomous ESM agents
+- **MOSES**: Meta-Optimizing Semantic Evolutionary Search for program synthesis
+- **NLP Integration**: Natural language processing with AtomSpace grounding
+- **Planning System**: Goal-directed behavior and hierarchical task planning
+- **Visualization Dashboard**: Real-time cognitive monitoring and visualization
 
 ## Components
 
@@ -201,7 +209,7 @@ const report = agent.getSecurityReport();
 
 ### 11. Build Optimization - Phase 3
 
-**NEW**: Automated build analysis and optimization:
+Automated build analysis and optimization:
 
 - **Dead Code Detection**: Find unused modules
 - **Bundle Analysis**: Estimate and optimize bundle size
@@ -216,8 +224,146 @@ agent.execute();
 const report = agent.getOptimizationReport();
 ```
 
+### 12. Distributed AtomSpace - Phase 4 ✨
+
+**NEW**: Multi-node knowledge sharing with distributed synchronization:
+
+- **Peer Network**: Register and manage peer nodes
+- **Sync Strategies**: Eventual, strong, CRDT, attention-based
+- **Vector Clocks**: Causality tracking across nodes
+- **Conflict Resolution**: Automatic merge strategies
+- **Replication**: Configurable replication factors
+
+```javascript
+const { DistributedAtomSpace, SyncStrategy } = require('opencog');
+
+const das = new DistributedAtomSpace({
+  nodeId: 'node-1',
+  syncStrategy: SyncStrategy.EVENTUAL_CONSISTENCY,
+});
+
+das.registerPeer('node-2', { address: 'localhost:8001' });
+await das.syncWithPeers();
+```
+
+### 13. ESM Agent Arena - Phase 4 ✨
+
+**NEW**: MLOps Training Academy for autonomous ESM agents:
+
+- **Isolated Execution**: VM-based agent contexts
+- **Fitness Training**: Objective-based optimization
+- **Evolution**: Genetic algorithm agent improvement
+- **Academy Modes**: Competitive, cooperative, hybrid
+- **Lifecycle Management**: Training → Active → Deployment
+
+```javascript
+const { ESMAgentArena } = require('opencog');
+
+const arena = new ESMAgentArena(distributedAtomspace, {
+  maxAgents: 100,
+  evolutionEnabled: true,
+});
+
+const agentId = arena.registerAgent(code, {
+  trainingObjective: { type: 'maximize', value: 100 },
+});
+
+await arena.executeAgent(agentId, input);
+await arena.evolvePopulation();
+```
+
+### 14. MOSES - Phase 4 ✨
+
+**NEW**: Meta-Optimizing Semantic Evolutionary Search for program synthesis:
+
+- **Program Evolution**: Evolve programs to solve tasks
+- **Multiple Representations**: JavaScript, tree, linear
+- **Deme Expansion**: MOSES-specific optimization
+- **Fitness Modes**: Accuracy, MSE, F1, custom
+
+```javascript
+const { MOSES, RepresentationType } = require('opencog');
+
+const moses = new MOSES({
+  representationType: RepresentationType.JAVASCRIPT,
+  populationSize: 100,
+});
+
+moses.initializePopulation();
+const result = await moses.evolve(trainingData);
+```
+
+### 15. NLP Integration - Phase 4 ✨
+
+**NEW**: Natural language processing with AtomSpace grounding:
+
+- **Sentence Processing**: Full NLP pipeline
+- **Relationship Extraction**: Semantic triples
+- **Concept Grounding**: Link NL to knowledge
+- **Semantic Similarity**: Concept comparison
+- **Natural Queries**: Question answering
+
+```javascript
+const { NLPProcessor } = require('opencog');
+
+const nlp = new NLPProcessor(atomspace);
+
+const result = nlp.processSentence('The cat runs fast');
+const relationships = nlp.extractRelationships(text);
+const similarity = nlp.similarity('cat', 'dog');
+```
+
+### 16. Planning System - Phase 4 ✨
+
+**NEW**: Goal-directed behavior and hierarchical planning:
+
+- **Goal Management**: Create and track goals
+- **Action Registration**: Define available actions
+- **Plan Generation**: A* forward search
+- **Reactive Planning**: Event-driven triggers
+- **Plan Execution**: With automatic replanning
+
+```javascript
+const { Planner, Action, ActionType } = require('opencog');
+
+const planner = new Planner(atomspace);
+
+const action = new Action('move', ActionType.PRIMITIVE, executor, {
+  preconditions: [(state) => state.energy > 0],
+  effects: [(state) => { state.position += 1; }],
+});
+
+planner.registerAction(action);
+const goal = planner.createGoal('Reach goal', condition, priority);
+const plan = await planner.planForGoal(goal.id, state);
+```
+
+### 17. Visualization Dashboard - Phase 4 ✨
+
+**NEW**: Real-time cognitive system monitoring:
+
+- **Graph Visualization**: AtomSpace network graphs
+- **Attention Heatmaps**: Distribution by type
+- **Metrics Tracking**: Performance over time
+- **Event Timeline**: System event history
+- **Snapshots**: State comparison
+
+```javascript
+const { CognitiveVisualizer } = require('opencog');
+
+const viz = new CognitiveVisualizer(atomspace, {
+  enableAutoUpdate: true,
+  updateInterval: 1000,
+});
+
+const dashboard = viz.generateDashboard();
+const snapshot = viz.createSnapshot('before-training');
+viz.logEvent('training-complete', 'Training finished');
+```
+
 ## Quick Start
 
+### Basic System
 ```javascript
 const opencog = require('opencog');
 const { AtomType } = require('internal/opencog/atomspace');
@@ -240,6 +386,34 @@ system.addAgent(new opencog.Agent.InferenceAgent());
 system.start();
 ```
 
+### Distributed System (Phase 4) ✨
+```javascript
+const opencog = require('opencog');
+
+// Create distributed cognitive system with all Phase 4 features
+const system = opencog.createDistributedCognitiveSystem({
+  nodeId: 'my-node-1',
+  syncStrategy: 'eventual',
+  enableESMArena: true,
+  enableMOSES: true,
+  enableNLP: true,
+  enablePlanner: true,
+  enableVisualizer: true,
+});
+
+// Register peers for distributed operation
+system.registerPeer('node-2', { address: 'localhost:8001' });
+
+// Use Phase 4 features
+const agentId = system.registerESMAgent(code, options);
+system.processNaturalLanguage('Hello, world!');
+const goal = system.createGoal(description, condition, priority);
+const dashboard = system.generateDashboard();
+
+// Get comprehensive statistics
+const stats = system.getSystemStats();
+```
+
 ## Running the Demos
 
 ### Basic Demo
@@ -257,17 +431,48 @@ node examples/nodespace-demo.js
 node examples/advanced-opencog-demo.js
 ```
 
+### Distributed Cognitive Architecture Demo (Phase 4) ✨
+```bash
+node examples/phase4-opencog-demo.js
+```
+
 ## Documentation
 
 - [OpenCog Overview](./README.md) - This document
 - [NodeSpace Guide](./NODESPACE.md) - Module dependency tracking
 - [Module Loader Integration](./MODULE_LOADER_INTEGRATION.md) - Integration guide
 - [Phase 3 Features](./PHASE3_FEATURES.md) - Advanced features documentation
+- [Phase 4 Features](./PHASE4_FEATURES.md) - **NEW**: Distributed architecture guide
 
 ## Architecture
 
+### Phase 1-3 Architecture
 ```
 Cognitive Loop → Agent Orchestrator → [Agents] → AtomSpace + AttentionBank
+```
+
+### Phase 4 Distributed Architecture ✨
+```
+┌─────────────────────────────────────────────────────────┐
+│              Distributed AtomSpace Network               │
+│  Node 1 ◄──► Node 2 ◄──► Node 3 ◄──► Node N            │
+│    ▲            ▲            ▲            ▲              │
+│    └────────────┴────────────┴────────────┘              │
+│              Knowledge Substrate                         │
+└─────────────────────────────────────────────────────────┘
+                      │
+    ┌─────────────────┼─────────────────┐
+    │                 │                 │
+┌───▼────┐    ┌──────▼──────┐    ┌─────▼─────┐
+│  ESM   │    │    MOSES     │    │  Planner  │
+│ Arena  │    │   Engine     │    │  System   │
+└────────┘    └──────────────┘    └───────────┘
+    │                 │                 │
+    └─────────────────┼─────────────────┘
+                      │
+        ┌─────────────▼──────────────┐
+        │  NLP  │ Planning │  Viz    │
+        └─────────────────────────────┘
 ```
 
 ## License
