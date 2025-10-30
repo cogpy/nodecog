@@ -94,6 +94,29 @@ Ready-to-use agents for common cognitive tasks:
 - **AttentionAllocationAgent**: Spreads attention through the hypergraph
 - **PatternMinerAgent**: Discovers frequent patterns in knowledge
 
+### 6. Module Loader Integration
+
+**NEW**: Automatic integration with Node.js module loader for real-time dependency tracking:
+
+- **Automatic Tracking**: All loaded modules are tracked in NodeSpace
+- **Real-time Dependencies**: Dependency graph built as modules load
+- **Type Detection**: Automatic classification (builtin, npm, local, json)
+- **Export Tracking**: Module exports registered in AtomSpace
+- **ESM Support**: Both CommonJS and ES modules tracked
+- **Runtime API**: Access module graph via `process.opencog`
+- **Cognitive Analysis**: Optional autonomous analysis with ModuleAnalyzerAgent
+
+Enable with environment variables:
+```bash
+# Enable module tracking
+NODE_OPENCOG_ENABLE=1 node app.js
+
+# Enable with autonomous analysis
+NODE_OPENCOG_ENABLE=1 NODE_OPENCOG_AUTO_ANALYZE=1 node app.js
+```
+
+See [Module Loader Integration Guide](./MODULE_LOADER_INTEGRATION.md) for complete documentation.
+
 ## Quick Start
 
 ```javascript
