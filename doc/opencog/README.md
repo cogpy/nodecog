@@ -6,12 +6,20 @@ A pure Node.js implementation of an OpenCog-inspired autonomous multi-agent cogn
 
 This system provides a complete cognitive architecture with the following components:
 
+### Core Components
 - **AtomSpace**: Hypergraph knowledge representation system
 - **AttentionBank**: Economic attention allocation mechanism (ECAN-inspired)
 - **Agent Framework**: Base class for cognitive agents with autonomous operation
 - **AgentOrchestrator**: Multi-agent scheduling and coordination
 - **CognitiveLoop**: Autonomous cognitive cycle manager
-- **NodeSpace**: AtomSpace-based module system for Node.js (NEW)
+- **NodeSpace**: AtomSpace-based module system for Node.js
+
+### Phase 3 Advanced Features (NEW)
+- **PLN (Probabilistic Logic Networks)**: Advanced probabilistic reasoning
+- **Temporal Reasoning**: Time-based knowledge and inference
+- **Performance Profiling**: Automatic performance analysis
+- **Security Analysis**: Vulnerability detection and risk assessment
+- **Build Optimization**: Code structure analysis and recommendations
 
 ## Components
 
@@ -117,6 +125,97 @@ NODE_OPENCOG_ENABLE=1 NODE_OPENCOG_AUTO_ANALYZE=1 node app.js
 
 See [Module Loader Integration Guide](./MODULE_LOADER_INTEGRATION.md) for complete documentation.
 
+### 7. PLN (Probabilistic Logic Networks) - Phase 3
+
+**NEW**: Advanced probabilistic reasoning with truth values:
+
+- **Truth Values**: Strength and confidence for probabilistic inference
+- **Inference Rules**: Deduction, induction, abduction, revision, and more
+- **Forward Chaining**: Automatic inference generation
+- **Query System**: Probabilistic pattern matching
+
+See [Phase 3 Features Documentation](./PHASE3_FEATURES.md) for complete guide.
+
+```javascript
+const { PLNEngine, TruthValue } = require('opencog').PLN;
+
+const engine = new PLNEngine(atomspace, {
+  minConfidence: 0.1,
+  maxInferences: 100,
+});
+
+const inferences = engine.forwardChain(10);
+```
+
+### 8. Temporal Reasoning - Phase 3
+
+**NEW**: Time-based knowledge representation and reasoning:
+
+- **Temporal Events**: Events with time intervals
+- **Temporal Relationships**: BEFORE, AFTER, DURING, OVERLAPS
+- **Temporal Patterns**: Sequential pattern matching
+- **Temporal Decay**: Attention decay over time
+- **Transitivity Inference**: Automatic temporal inference
+
+```javascript
+const { TemporalEngine } = require('opencog').Temporal;
+
+const engine = new TemporalEngine(atomspace);
+const event = engine.addEvent('login', startTime, endTime, { userId: '123' });
+const relations = engine.findTemporalRelations(event1, event2);
+```
+
+### 9. Performance Profiling - Phase 3
+
+**NEW**: Automatic performance monitoring and optimization:
+
+- **Load Time Tracking**: Monitor module load times
+- **Bottleneck Detection**: Identify slow modules
+- **Optimization Recommendations**: Actionable suggestions
+- **Attention-Based Prioritization**: Focus on critical performance issues
+
+```javascript
+const { PerformanceProfilerAgent } = require('opencog');
+
+const agent = new PerformanceProfilerAgent(atomspace);
+agent.trackModuleLoad('express', 250);
+const report = agent.getPerformanceReport();
+```
+
+### 10. Security Analysis - Phase 3
+
+**NEW**: Cognitive security vulnerability detection:
+
+- **Risk Assessment**: Analyze module security risks
+- **Vulnerability Detection**: Identify known vulnerable patterns
+- **Dependency Analysis**: Assess supply chain risks
+- **Security Recommendations**: Prioritized remediation steps
+
+```javascript
+const { SecurityAnalyzerAgent } = require('opencog');
+
+const agent = new SecurityAnalyzerAgent(atomspace);
+agent.execute();
+const report = agent.getSecurityReport();
+```
+
+### 11. Build Optimization - Phase 3
+
+**NEW**: Automated build analysis and optimization:
+
+- **Dead Code Detection**: Find unused modules
+- **Bundle Analysis**: Estimate and optimize bundle size
+- **Code Splitting**: Identify lazy loading opportunities
+- **Optimization Strategies**: Comprehensive recommendations
+
+```javascript
+const { BuildOptimizationAgent } = require('opencog');
+
+const agent = new BuildOptimizationAgent(atomspace);
+agent.execute();
+const report = agent.getOptimizationReport();
+```
+
 ## Quick Start
 
 ```javascript
@@ -141,15 +240,29 @@ system.addAgent(new opencog.Agent.InferenceAgent());
 system.start();
 ```
 
-## Running the Demo
+## Running the Demos
 
+### Basic Demo
 ```bash
 node examples/opencog-demo.js
 ```
 
+### NodeSpace Demo
+```bash
+node examples/nodespace-demo.js
+```
+
+### Advanced Features Demo (Phase 3)
+```bash
+node examples/advanced-opencog-demo.js
+```
+
 ## Documentation
 
-See the full documentation in `/doc/opencog/` for detailed API reference and usage examples.
+- [OpenCog Overview](./README.md) - This document
+- [NodeSpace Guide](./NODESPACE.md) - Module dependency tracking
+- [Module Loader Integration](./MODULE_LOADER_INTEGRATION.md) - Integration guide
+- [Phase 3 Features](./PHASE3_FEATURES.md) - Advanced features documentation
 
 ## Architecture
 
