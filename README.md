@@ -25,6 +25,7 @@ that discourage, exhaust, or otherwise negatively affect other participants.
     * [API documentation](#api-documentation)
   * [Verifying binaries](#verifying-binaries)
 * [Building Node.js](#building-nodejs)
+* [Architecture Documentation](#architecture-documentation)
 * [Security](#security)
 * [Contributing to Node.js](#contributing-to-nodejs)
 * [Current project team members](#current-project-team-members)
@@ -120,6 +121,27 @@ curl -fsO "https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc" \
 
 See [BUILDING.md](BUILDING.md) for instructions on how to build Node.js from
 source and a list of supported platforms.
+
+## Architecture Documentation
+
+NodeCog includes comprehensive technical architecture documentation with Mermaid diagrams and formal Z++ specifications:
+
+* **[Architecture Index](doc/ARCHITECTURE_INDEX.md)** - Central navigation hub for all architecture documentation
+* **[Technical Architecture](doc/TECHNICAL_ARCHITECTURE.md)** - System overview, component diagrams, deployment architectures
+* **[Formal Specification](doc/FORMAL_SPECIFICATION.md)** - Mathematical Z++ specifications for all major components
+* **[Component Interactions](doc/COMPONENT_INTERACTIONS.md)** - Detailed interaction flows and data flow diagrams
+
+### Key Architectural Components
+
+* **AtomSpace** - Hypergraph knowledge representation system
+* **Attention Bank** - Economic attention allocation (ECAN-inspired)
+* **Agent Orchestrator** - Multi-agent scheduling and coordination
+* **Cognitive Loop** - Autonomous cognitive cycle manager
+* **PLN Reasoner** - Probabilistic Logic Networks for reasoning
+* **Distributed AtomSpace** - Multi-node knowledge sharing
+* **Cognitive Synergy Engine** - V8/libuv integration with cognitive control
+
+For detailed documentation, start with the [Architecture Index](doc/ARCHITECTURE_INDEX.md).
 
 ## Security
 
