@@ -26,6 +26,7 @@ that discourage, exhaust, or otherwise negatively affect other participants.
   * [Verifying binaries](#verifying-binaries)
 * [Building Node.js](#building-nodejs)
 * [Architecture Documentation](#architecture-documentation)
+  * [Development Roadmap](#development-roadmap)
 * [Security](#security)
 * [Contributing to Node.js](#contributing-to-nodejs)
 * [Current project team members](#current-project-team-members)
@@ -142,6 +143,16 @@ NodeCog includes comprehensive technical architecture documentation with Mermaid
 * **Cognitive Synergy Engine** - V8/libuv integration with cognitive control
 
 For detailed documentation, start with the [Architecture Index](doc/ARCHITECTURE_INDEX.md).
+
+### Development Roadmap
+
+See **[DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md)** for a comprehensive integration plan for all Node.js technologies and standards with the OpenCog orchestration framework. The roadmap includes:
+
+* Phased implementation strategy (Phases 5-12)
+* Integration of npm, CVE tracking, HTTP, CI/CD, and more
+* Cognitive agent specifications for each component
+* Linkages to Distributed NodeSpace and Cognitive Synergy Engine
+* Success metrics, timelines, and risk management
 
 ## Security
 
