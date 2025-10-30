@@ -1,5 +1,6 @@
 #include "cognitive_napi_bridge.h"
 #include "node_api.h"
+#include "node_binding.h"
 #include <string>
 
 namespace node {
@@ -341,5 +342,6 @@ napi_value CognitiveNAPIBridge::Init(napi_env env, napi_value exports) {
 }  // namespace cognitive
 }  // namespace node
 
-// Module initialization
-NAPI_MODULE(NODE_GYP_MODULE_NAME, node::cognitive::CognitiveNAPIBridge::Init)
+// Register the internal binding
+NODE_BINDING_CONTEXT_AWARE_INTERNAL(cognitive_synergy, 
+                                     node::cognitive::CognitiveNAPIBridge::Init)
