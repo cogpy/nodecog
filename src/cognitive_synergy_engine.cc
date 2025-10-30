@@ -28,12 +28,10 @@ void IsolateContext::ExecuteTasks(int max_microtasks) {
   v8::Isolate::Scope isolate_scope(isolate_);
   v8::HandleScope handle_scope(isolate_);
   
-  // Execute up to max_microtasks microtasks
-  for (int i = 0; i < max_microtasks; i++) {
-    if (!isolate_->PerformMicrotaskCheckpoint()) {
-      break;  // No more microtasks
-    }
-  }
+  // Execute microtask checkpoint
+  // Note: In modern V8, PerformMicrotaskCheckpoint doesn't return a value
+  // We execute it once per task slice
+  isolate_->PerformMicrotaskCheckpoint();
 }
 
 void IsolateContext::PerformMicrotaskCheckpoint() {
